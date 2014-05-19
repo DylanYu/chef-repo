@@ -11,8 +11,9 @@ filename = "test_neutron.py"
 
 # will execute every time
 execute 'execute_python' do
-    cwd '/home/nju/api/'
-    command "python #{filename}"
+  cwd '/home/nju/api/osdk/tests/neutron/'
+  command "python #{filename}"
+  path ["$PATH", "/home/nju/api"]
 end
 
 file "api_config" do
