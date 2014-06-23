@@ -6,7 +6,7 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-file_maintainer_create_file "/home/nju/test_create_file" do
+file_maintainer_create_file "/home/helo/test_create_file" do
     content '123456'
     action :create
 end
