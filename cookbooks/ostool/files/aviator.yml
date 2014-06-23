@@ -1,0 +1,38 @@
+default:
+  provider: openstack
+  auth_service:
+    name: identity
+    host_uri: http://114.212.189.134:5000/
+    request: create_token
+    validator: list_tenants
+    api_version: v2
+  auth_credentials:
+    username: admin
+    password: ADMIN_PASS
+    tenant_name: admin
+
+allinone:
+  provider: openstack
+  auth_service:
+    name: identity
+    host_uri: http://114.212.189.147:5000/
+    request: create_token
+    validator: list_tenants
+    api_version: v2
+  auth_credentials:
+    username: admin
+    password: ADMIN_PASS
+    tenant_name: admin
+
+multiple:
+  provider: openstack
+  auth_service:
+    name: identity
+    host_uri: http://114.212.189.134:5000/
+    request: create_token
+    validator: list_tenants
+    api_version: v2
+  auth_credentials:
+    username: admin
+    password: ADMIN_PASS
+    tenant_name: admin
