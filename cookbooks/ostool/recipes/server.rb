@@ -19,6 +19,3 @@ ostool_server "test_create_server" do
   networks [{"uuid"=>"9ac45086-0a5a-4692-8dd1-a31188ebac7c"}]
 end
 
-#ostool_network "chef_test" do
-#  action :create
-#end

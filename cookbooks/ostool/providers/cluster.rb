@@ -33,7 +33,14 @@ def create_cluster
             )
   session.authenticate
 
-  flavor_ref = '3' if @new_resource.node_type == 'medium'
+  flavor_ref = '1'
+  if @new_resource.node_type == 'small'
+    flavor_ref = '2'
+  elsif @new_resource.node_type == 'medium'
+    flavor_ref = '3'
+  elsif @new_resource.node_type == 'large'
+    flavor_ref = '4'
+  end
   number = @new_resource.number
   image_ref = 'fb55faac-7953-4a76-8761-251646a3001e' if @new_resource.image == 'ubuntu'
   networks = [{"uuid"=>"9ac45086-0a5a-4692-8dd1-a31188ebac7c"}]
@@ -56,5 +63,3 @@ end
 def cluster_exist?(name)
   return false
 end
-
-

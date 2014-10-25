@@ -4,11 +4,11 @@ end
 
 require 'aviator'
 ostool_cluster "test_create_cluster" do
-  action :create
-  name 'test_cluster'
-  node_type 'medium'
-  number 3
-  image 'ubuntu'
-  username 'testuser'
-  userpw 'cs'
+  action node[:cluster][:action]
+  name node[:cluster][:name]
+  node_type node[:cluster][:node_type]
+  number node[:cluster][:number]
+  image node[:cluster][:image]
+  username node[:cluster][:username]
+  userpw node[:cluster][:userpw]
 end

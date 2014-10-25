@@ -1,0 +1,16 @@
+{
+  "cloud":{
+    "magic":false,
+    "cloud":"/home/helo/testcloud"
+  },
+  "cluster" :{
+    "action" : "create",
+    "name" : "test_cluster",
+    "node_type" : "small",
+    "number" : 5,
+    "image" : "ubuntu",
+    "username" : "testuser",
+    "userpw" : "cs"
+  },
+  "run_list":["recipe[ostool]"]
+}

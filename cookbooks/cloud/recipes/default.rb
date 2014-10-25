@@ -9,6 +9,6 @@
 
 cloud_magic "test_cloud_magic" do
   action :create
-  magic false
-  cloud "home/helo/testH"
+  magic node[:cloud][:magic]
+  cloud node[:cloud][:cloud]
 end
