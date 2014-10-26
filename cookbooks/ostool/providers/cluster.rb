@@ -47,17 +47,20 @@ def create_cluster
   username = @new_resource.username
   userpw = @new_resource.userpw
 
-  number.times {
-    response = session.compute_service.request(:create_server) do |params|
-                params.name = username
-                params.flavor_ref = flavor_ref
-                params.image_ref = image_ref
-                params.networks = networks
-                params.admin_pass = userpw
-               end
-    puts response.body
-    Chef::Log.info "response of create_cluster: #{response.body}"
-  }
+  ::File.open("/tmp/machines", 'w') do |file|
+    number.times {
+      response = session.compute_service.request(:create_server) do |params|
+                  params.name = username
+                  params.flavor_ref = flavor_ref
+                  params.image_ref = image_ref
+                  params.networks = networks
+                  params.admin_pass = userpw
+                 end
+      puts response.body
+      file.write(response.body[:server][:id] + "\n")
+      Chef::Log.info "response of create_cluster: #{response.body}"
+    }
+  end
 end
 
 def cluster_exist?(name)
