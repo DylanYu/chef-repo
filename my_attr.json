@@ -5,9 +5,9 @@
   },
   "cluster" :{
     "action" : "create",
-    "name" : "test_cluster",
+    "name" : "c1",
     "node_type" : "small",
-    "number" : 2,
+    "number" : 0,
     "image" : "ubuntu",
     "username" : "testuser",
     "userpw" : "cs"
